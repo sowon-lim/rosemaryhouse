@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객실 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+<div id="navbar-container"></div>
+
+<section class="max-w-5xl mx-auto pt-28 pb-12 px-4">
+    <nav class="fixed top-16 left-0 right-0 bg-white z-40 shadow overflow-x-auto whitespace-nowrap px-4 py-2 border-b">
+        <ul class="flex justify-center space-x-2 text-sm sm:text-base">
+            <li><a href="rooms/room-101.html" class="text-gray-700 hover:text-green-600 font-medium">단체룸 101호</a></li>
+            <li class="text-gray-400">|</li>
+            <li><a href="rooms/room-102.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 102호</a></li>
+            <li class="text-gray-400">|</li>
+            <li><a href="rooms/room-103.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 103호</a></li>
+            <li class="text-gray-400">|</li>
+            <li><a href="rooms/room-301.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 301호</a></li>
+            <li class="text-gray-400">|</li>
+            <li><a href="rooms/room-302.html" class="text-gray-700 hover:text-green-600 font-medium">커플룸 302호</a></li>
+            <li class="text-gray-400">|</li>
+            <li><a href="rooms/room-303.html" class="text-gray-700 hover:text-green-600 font-medium">커플룸 303호</a></li>
+        </ul>
+    </nav>
+    <div class="mt-12 space-y-6 text-gray-800">
+        <h2 class="text-2xl font-bold text-green-700">단체룸 101호</h2>
+        <p><span class="font-semibold text-green-700">기준인원</span> 8인 ㅣ 최대인원 10인</p>
+        <p>15평 투룸형, 거실겸침실 1실, 작은침실 1실, 주방, 샤워&화장실</p>
+        <p class="font-medium">대형시설로 인원수가 많아도 걱정이 없습니다.<br>바로 앞에 계곡이 있어 물놀이에 편리합니다.</p>
+        <p class="text-sm text-gray-600">※ 20인-30인일 경우 1층 전체 (102호/103호 이용) 독채를 권장</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6">
+            <img src="images/room101_1.png" alt="101호 사진1" class="w-full aspect-square object-cover rounded">
+            <img src="images/room101_2.png" alt="101호 사진2" class="w-full aspect-square object-cover rounded">
+            <img src="images/room101_3.png" alt="101호 사진3" class="w-full aspect-square object-cover rounded">
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+    fetch('/navbar.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('navbar-container').innerHTML = html);
+    fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer-container').innerHTML = html);
+</script>
+</body>
+</html>
