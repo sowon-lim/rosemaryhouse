@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부대시설 - 로즈마리 펜션</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100">
+
+<!-- 네비게이션 바 불러오기 -->
+<div id="navbar-container"></div>
+
+<!-- 부대시설 -->
+<section class="max-w-6xl mx-auto p-8 mt-32">
+  <h2 class="text-3xl font-bold text-center text-gray-800">부대시설</h2>
+  <p class="text-gray-600 text-center mt-4">편안한 휴식과 즐거운 시간을 위한 다양한 부대시설이 마련되어 있습니다.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+    <!-- 바비큐장 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img class="w-full h-48 object-cover" src="images/barbecue.jpg" alt="바비큐장">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">바비큐장</h3>
+        <p class="text-gray-600 mt-2">이용객을 위한 야외 바비큐장이 마련되어 있습니다. 가족과 함께 즐길 수 있는 공간입니다.</p>
+      </div>
+    </div>
+
+    <!-- 수영장 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img class="w-full h-48 object-cover" src="images/swimming.jpg" alt="수영장">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">수영장</h3>
+        <p class="text-gray-600 mt-2">여름철에는 시원한 수영장에서 즐거운 시간을 보낼 수 있습니다.</p>
+      </div>
+    </div>
+
+    <!-- 카페 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img class="w-full h-48 object-cover" src="images/cafe.jpg" alt="카페">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">카페</h3>
+        <p class="text-gray-600 mt-2">펜션 내에 편안한 분위기의 카페가 있어 커피와 간식을 즐길 수 있습니다.</p>
+      </div>
+    </div>
+
+    <!-- 기타 시설 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img class="w-full h-48 object-cover" src="images/other.jpg" alt="기타 시설">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">기타 시설</h3>
+        <p class="text-gray-600 mt-2">여러 가지 편의 시설이 마련되어 있어 편안한 휴식을 제공합니다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- 스크립트 파일 불러오기 -->
+<script src="/script/loadNavbar.js"></script>
+
+</body>
+</html>
