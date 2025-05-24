@@ -1,53 +1,237 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>객실 안내</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>101호 - 로즈마리펜션</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
-<div id="navbar-container"></div>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
 
-<section class="max-w-5xl mx-auto pt-28 pb-12 px-4">
-    <nav class="fixed top-16 left-0 right-0 bg-white z-40 shadow overflow-x-auto whitespace-nowrap px-4 py-2 border-b">
-        <ul class="flex justify-center space-x-2 text-sm sm:text-base">
-            <li><a href="rooms/room-101.html" class="text-gray-700 hover:text-green-600 font-medium">단체룸 101호</a></li>
-            <li class="text-gray-400">|</li>
-            <li><a href="rooms/room-102.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 102호</a></li>
-            <li class="text-gray-400">|</li>
-            <li><a href="rooms/room-103.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 103호</a></li>
-            <li class="text-gray-400">|</li>
-            <li><a href="rooms/room-301.html" class="text-gray-700 hover:text-green-600 font-medium">패밀리 301호</a></li>
-            <li class="text-gray-400">|</li>
-            <li><a href="rooms/room-302.html" class="text-gray-700 hover:text-green-600 font-medium">커플룸 302호</a></li>
-            <li class="text-gray-400">|</li>
-            <li><a href="rooms/room-303.html" class="text-gray-700 hover:text-green-600 font-medium">커플룸 303호</a></li>
-        </ul>
-    </nav>
-    <div class="mt-12 space-y-6 text-gray-800">
-        <h2 class="text-2xl font-bold text-green-700">단체룸 101호</h2>
-        <p><span class="font-semibold text-green-700">기준인원</span> 8인 ㅣ 최대인원 10인</p>
-        <p>15평 투룸형, 거실겸침실 1실, 작은침실 1실, 주방, 샤워&화장실</p>
-        <p class="font-medium">대형시설로 인원수가 많아도 걱정이 없습니다.<br>바로 앞에 계곡이 있어 물놀이에 편리합니다.</p>
-        <p class="text-sm text-gray-600">※ 20인-30인일 경우 1층 전체 (102호/103호 이용) 독채를 권장</p>
+<!-- Hero Section -->
+<section class="relative h-[60vh] w-full">
+    <img src="../assets/images/room-101-main.jpg" alt="101호 대표 이미지" class="object-cover w-full h-full">
+    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">101호 단체룸</h1>
+        <p class="text-lg md:text-xl">자연 속 여유로운 휴식, 넉넉한 공간의 단체룸</p>
+        <a href="#reserve"
+           class="mt-6 bg-white text-gray-800 px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">예약하기</a>
+    </div>
+</section>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-6">
-            <img src="images/room101_1.png" alt="101호 사진1" class="w-full aspect-square object-cover rounded">
-            <img src="images/room101_2.png" alt="101호 사진2" class="w-full aspect-square object-cover rounded">
-            <img src="images/room101_3.png" alt="101호 사진3" class="w-full aspect-square object-cover rounded">
+<!-- 방 소개 -->
+<!-- 방 섹션 헤더 -->
+<section class="bg-[#f9f9f4] text-gray-800 px-4 py-12">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold mb-2">101호 단체룸</h2>
+        <p class="text-gray-600 mb-8">
+            대형시설로 인원수가 많아도 걱정이 없습니다.
+            바로 앞에 계곡이 있어 물놀이에 편리합니다.
+        </p>
+
+        <!-- 상단: 큰 이미지 + 설명 -->
+        <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
+            <!-- 이미지 -->
+            <img src="../assets/images/room101-1.jpeg" alt="101호 대표 이미지" class="rounded-xl shadow-md w-full">
+
+            <!-- 설명 -->
+            <div class="text-gray-800">
+                <h3 class="text-2xl font-bold mb-2 text-green-900">101호 단체룸</h3>
+                <p><strong>인원:</strong> 기준 8명 / 최대 10명</p>
+                <p><strong>크기:</strong> 약 15평, 투룸형</p>
+                <p><strong>구성:</strong> 거실겸침실 1실, 작은침실 1실, 주방, 샤워실/화장실</p>
+                <p class="mt-2"><strong>특징:</strong> 대형 공간으로 단체 여행에 적합하며, 바로 앞 계곡에서 물놀이도 가능</p>
+                <p class="mt-2"><strong>20인-30인일 경우 1층 전체 (102호/103호 이용) 독채를 권장</strong></p>
+                <!-- View Details 버튼 -->
+                <a href="#" id="openModal" class="inline-block mt-4 text-blue-600 underline">View Details</a>
+
+                <!-- 모달 -->
+                <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+                    <div class="relative max-w-3xl w-full bg-white rounded-lg overflow-hidden shadow-lg">
+
+                        <!-- 닫기(X) 버튼 -->
+                        <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl font-bold z-10">&times;</button>
+
+                        <!-- 이미지 영역 -->
+                        <div class="relative">
+                            <img id="modalImage" src="../assets/images/room-101-sub1.jpg" alt="슬라이드 이미지" class="w-full max-h-[80vh] object-contain">
+
+                            <!-- ← 이전 버튼 -->
+                            <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                                &#8592;
+                            </button>
+
+                            <!-- → 다음 버튼 -->
+                            <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                                &#8594;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- 하단 썸네일 이미지 -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <img src="../assets/images/room101-2.jpeg" alt="101호 서브1" class="rounded-lg hover:opacity-90 transition">
+            <img src="../assets/images/room101-3.jpeg" alt="101호 서브2" class="rounded-lg hover:opacity-90 transition">
+            <img src="../assets/images/room101-4.jpeg" alt="101호 서브3" class="rounded-lg hover:opacity-90 transition">
+            <img src="../assets/images/room101-5.jpeg" alt="101호 서브4" class="rounded-lg hover:opacity-90 transition">
         </div>
     </div>
 </section>
 
-<div id="footer-container"></div>
+
+<!-- 편의시설 안내 섹션 -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">편의시설 안내</h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <!-- 냉장고 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/fridge.png" alt="냉장고" class="w-6 h-6" />
+            <span class="text-gray-700">냉장고</span>
+        </div>
+
+        <!-- 씽크대 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/sink.png" alt="씽크대" class="w-6 h-6" />
+            <span class="text-gray-700">씽크대</span>
+        </div>
+
+        <!-- 전자렌지 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/microwave.png" alt="전자렌지" class="w-6 h-6" />
+            <span class="text-gray-700">전자렌지</span>
+        </div>
+
+        <!-- 전기밥솥 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/rice-cooker.png" alt="전기밥솥" class="w-6 h-6" />
+            <span class="text-gray-700">전기밥솥</span>
+        </div>
+
+        <!-- 식기류 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/dish.png" alt="식기류" class="w-6 h-6" />
+            <span class="text-gray-700">식기류</span>
+        </div>
+
+        <!-- TV -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/tv.png" alt="TV" class="w-6 h-6" />
+            <span class="text-gray-700">TV</span>
+        </div>
+
+        <!-- 에어컨 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/aircon.png" alt="에어컨" class="w-6 h-6" />
+            <span class="text-gray-700">에어컨</span>
+        </div>
+
+        <!-- 욕실용품 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/bath.png" alt="욕실용품" class="w-6 h-6" />
+            <span class="text-gray-700">욕실용품</span>
+        </div>
+
+        <!-- 드라이기 -->
+        <div class="flex items-center space-x-3">
+            <img src="../assets/icons/hairdryer.png" alt="드라이기" class="w-6 h-6" />
+            <span class="text-gray-700">드라이기</span>
+        </div>
+    </div>
+</section>
+
+<!-- 다른 객실 안내 -->
+<section class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">다른객실 보기</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
+        <!-- 102호 -->
+        <a href="room-102.html" class="flex flex-col items-center text-center space-y-2">
+            <p class="text-sm font-semibold">102호</p>
+            <img src="../assets/images/room102-1.jpeg" alt="102호" class="w-full rounded-lg hover:opacity-80 transition" />
+        </a>
+
+        <!-- 103호 -->
+        <a href="room-103.html" class="flex flex-col items-center text-center space-y-2">
+            <p class="text-sm font-semibold">103호</p>
+            <img src="../assets/images/room103-1.jpeg" alt="103호" class="w-full rounded-lg hover:opacity-80 transition" />
+        </a>
+    </div>
+</section>
+
+
 <script>
-    fetch('/navbar.html')
+    fetch('../partials/header.html')
         .then(res => res.text())
-        .then(html => document.getElementById('navbar-container').innerHTML = html);
-    fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => document.getElementById('footer-container').innerHTML = html);
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            import('../assets/js/header.js').then(module => {
+                module.initHeader();
+            });
+        });
+
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const images = [
+        '../assets/images/room101-1.jpeg',
+        '../assets/images/room101-2.jpeg',
+        '../assets/images/room101-3.jpeg',
+        '../assets/images/room101-4.jpeg',
+        '../assets/images/room101-5.jpeg',
+        '../assets/images/room101-6.jpeg',
+    ];
+
+    let currentIndex = 0;
+
+    function updateImage() {
+        modalImage.src = images[currentIndex];
+    }
+
+    openModal.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+        updateImage();
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    // [옵션] ESC 누르면 닫히기
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modal.classList.add('hidden');
+        }
+    });
+    // 바깥 영역 클릭 시 닫기
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
 </script>
+
 </body>
 </html>

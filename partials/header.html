@@ -1,0 +1,40 @@
+<!-- 상단 헤더 -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 bg-transparent text-white z-50">
+    <div class="text-xl font-bold">로즈마리펜션</div>
+    <button id="menuToggle" class="block focus:outline-none">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+</header>
+
+
+<!-- 슬라이드 메뉴 -->
+<div id="mobileMenu" class="fixed top-0 right-0 w-2/3 max-w-sm h-full bg-white/80 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-end p-4">
+        <button id="menuClose" class="text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+    <ul class="flex flex-col items-center gap-6 text-xl text-gray-800 mt-12">
+        <li class="w-full text-center">
+            <button id="toggleRooms" class="w-full text-xl px-4 py-2 hover:underline">객실안내</button>
+            <ul id="subMenu" class="overflow-hidden max-h-0 transition-all duration-500 ease-in-out flex flex-col gap-2 text-base text-gray-700">
+                <li><a href="../rooms/room-101.html" class="block px-4 py-1 hover:text-blue-500">101호</a></li>
+                <li><a href="../rooms/room-102.html" class="block px-4 py-1 hover:text-blue-500">102호</a></li>
+                <li><a href="../rooms/room-103.html" class="block px-4 py-1 hover:text-blue-500">103호</a></li>
+                <li><a href="../rooms/room-301.html" class="block px-4 py-1 hover:text-blue-500">301호</a></li>
+                <li><a href="../rooms/room-302.html" class="block px-4 py-1 hover:text-blue-500">302호</a></li>
+                <li><a href="../rooms/room-303.html" class="block px-4 py-1 hover:text-blue-500">303호</a></li>
+            </ul>
+        </li>
+        <li><a href="#rooms">이용시설</a></li>
+        <li><a href="#reserve">예약안내</a></li>
+        <li><a href="#price">요금</a></li>
+        <li><a href="#location">오시는길</a></li>
+        <li><a href="#gallery">사진첩</a></li>
+        <li><a href="#notice">공지사항</a></li>
+    </ul>
+</div>
