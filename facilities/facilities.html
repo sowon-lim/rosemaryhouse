@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>이용시설</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
+
+<!-- 메인 콘텐츠 -->
+<main class="pt-32 pb-64 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">바베큐장</h1>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- 왼쪽: 이미지 -->
+        <div class="w-full">
+            <img src="../assets/images/facility-bbq.png" alt="바베큐장 사진" class="w-full rounded-2xl shadow-lg object-cover" />
+        </div>
+
+        <!-- 오른쪽: 설명 -->
+        <div class="space-y-8">
+
+            <!-- 이용 장소 -->
+            <div>
+                <div class="flex items-center gap-2 text-xl font-semibold text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a4 4 0 00-8 0v2a2 2 0 00-2 2v5h12v-5a2 2 0 00-2-2z" />
+                    </svg>
+                    <h2>이용 장소</h2>
+                </div>
+                <p class="text-base	 text-gray-700 mt-2">지하 1층 별도 바베큐장 또는 각 방 앞</p>
+            </div>
+
+            <!-- 이용 시간 -->
+            <div>
+                <div class="flex items-center gap-2 text-xl font-semibold text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h2>이용 시간</h2>
+                </div>
+                <p class="text-base	 text-gray-700 mt-2">오후 12:00 ~ 오후 10:00</p>
+            </div>
+
+            <!-- 이용 요금 -->
+            <div>
+                <div class="flex items-center gap-2 text-xl font-semibold text-gray-800 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.105 0-2 .895-2 2 0 1.105.895 2 2 2s2-.895 2-2c0-1.105-.895-2-2-2z M12 12v4m0 4h.01M21 12c0-4.418-3.582-8-8-8s-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8z" />
+                    </svg>
+                    <h2>이용 요금</h2>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-300 text-gray-800 text-center">
+                        <thead class="bg-gray-100 text-base">
+                        <tr>
+                            <th class="border px-4 py-2">인원</th>
+                            <th class="border px-4 py-2">요금</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-base">
+                        <tr>
+                            <td class="border px-4 py-2">2인</td>
+                            <td class="border px-4 py-2">20,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">2인 초과 ~ 4인 미만</td>
+                            <td class="border px-4 py-2">40,000원</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">4인 이상</td>
+                            <td class="border px-4 py-2">40,000원</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="border px-4 py-2">숯 추가</td>
+                            <td class="border px-4 py-2">10,000원</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- 시설 안내 -->
+            <div>
+                <div class="flex items-center gap-2 text-xl font-semibold text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V9a1 1 0 00-1-1h-3V5a1 1 0 00-1-1H9a1 1 0 00-1 1v3H5a1 1 0 00-1 1v4h16zM4 15h16v2a1 1 0 01-1 1H5a1 1 0 01-1-1v-2z" />
+                    </svg>
+                    <h2>시설 안내</h2>
+                </div>
+                <ul class="list-disc list-inside text-base text-gray-700 mt-2 space-y-1">
+                    <li>그릴</li>
+                    <li>숯</li>
+                    <li>망</li>
+                    <li>전자레인지</li>
+                </ul>
+            </div>
+
+            <!-- 주의 사항 -->
+            <div>
+                <div class="flex items-center gap-2 text-xl font-semibold text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M4.293 6.707a1 1 0 011.414 0L12 13.414l6.293-6.293a1 1 0 111.414 1.414L13.414 15l6.293 6.293a1 1 0 01-1.414 1.414L12 16.414l-6.293 6.293a1 1 0 01-1.414-1.414L10.586 15 4.293 8.707a1 1 0 010-1.414z" />
+                    </svg>
+                    <h2>주의 사항</h2>
+                </div>
+                <ul class="list-disc list-inside text-base text-gray-700 mt-2 space-y-1">
+                    <li>설거지 및 세척은 지정된 장소를 이용해주세요.</li>
+                    <li>물을 아껴 사용해주세요.</li>
+                    <li>음식물 및 기타 쓰레기는 꼭 분리수거 해주세요.</li>
+                    <li>오후 10시 이후에는 사용을 자제해주세요.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    fetch('../partials/header.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            import('../assets/js/header.js').then(module => {
+                module.initHeader();
+            });
+        });
+</script>
+</body>
+</html>

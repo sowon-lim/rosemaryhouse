@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>오시는 길</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dv0794kphz"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
+
+<!-- 메인 콘텐츠 -->
+<main class="pt-32 pb-64 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">오시는 길</h1>
+
+    <!-- 주소 정보 -->
+    <section class="mb-12 space-y-4">
+        <div class="flex items-center gap-3 text-xl font-semibold">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 16.657L13.414 12.414a4 4 0 00-5.657 0L6.343 14.828a8 8 0 1011.314 1.829z" />
+            </svg>
+            <span>주소</span>
+        </div>
+        <p class="text-lg">충청북도 충주시 수안보면 미륵송계로 464</p>
+
+        <div class="flex items-center gap-3 text-xl font-semibold">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 10h1l2-2m4 0l2 2h2l2-2 2 2h1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z" />
+            </svg>
+            <span>지번 주소</span>
+        </div>
+        <p class="text-lg">충북 충주시 수안보면 온천리 481-5</p>
+
+        <!-- 지도 컨테이너 -->
+        <div id="map" class="w-full h-[400px] rounded-xl shadow mb-12"></div>
+
+        <!-- 네이버 지도 버튼 -->
+        <div class="mt-6">
+            <a href="https://map.naver.com/p/entry/place/11629913?c=15.00,0,0,0,dh" target="_blank"
+               class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+                네이버 지도로 보기
+            </a>
+        </div>
+
+
+    </section>
+
+    <!-- 자가용 이용 시 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 13l1-2m1-2l1-2m3-3h8a2 2 0 012 2v6h1a1 1 0 011 1v3h-1v3a1 1 0 01-1 1h-1v1h-2v-1H9v1H7v-1H6a1 1 0 01-1-1v-3H4v-3a1 1 0 011-1h1V6a2 2 0 012-2z" />
+            </svg>
+            <h2>자가용 이용 시</h2>
+        </div>
+        <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+            <li>네비게이션에 <strong>‘미륵송계로 464’</strong> 또는 <strong>‘수안보 미륵리 481-5’</strong> 입력</li>
+            <li>중부내륙고속도로 <strong>수안보 IC → 약 7분 거리</strong></li>
+            <li><strong>충주 시내</strong>에서 약 30분, <strong>서울 기준 약 2시간 소요</strong></li>
+        </ul>
+        <blockquote class="mt-4 text-sm text-gray-600 italic">
+            펜션 내 무료 주차 공간 완비
+        </blockquote>
+    </section>
+
+    <!-- 대중교통 이용 시 -->
+    <section>
+        <div class="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <svg class="w-6 h-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+            <h2>대중교통 이용 시</h2>
+        </div>
+        <p class="text-lg mb-2">[충주 시외버스터미널] → [수안보]행 <strong>508번 시내버스</strong> 탑승</p>
+        <p class="text-lg text-gray-700">하차 후 도보 약 10분</p>
+    </section>
+</main>
+<script>
+    fetch('../partials/header.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            import('../assets/js/header.js').then(module => {
+                module.initHeader();
+            });
+        });
+
+
+
+    // ✅ 지도 초기화
+    var map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(36.9080854, 127.9833069), // 수안보 미륵송계로 464 근처 좌표
+        zoom: 15
+    });
+
+    // ✅ 마커 생성
+    var marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(36.9080854, 127.9833069),
+        map: map,
+        title: "로즈마리펜션"
+    });
+
+    // ✅ 정보창
+    var infowindow = new naver.maps.InfoWindow({
+        content: '<div style="padding:10px;">로즈마리펜션<br/>충북 충주시 수안보면 미륵송계로 464</div>'
+    });
+
+    naver.maps.Event.addListener(marker, "click", function () {
+        infowindow.open(map, marker);
+    });
+</script>
+</body>
+</html>

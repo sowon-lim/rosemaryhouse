@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>요금 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
+
+<!-- 메인 콘텐츠 -->
+<main class="pt-32 pb-64 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">요금 안내</h1>
+    <!-- 요금 구분 설명 -->
+    <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+        <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 00-4 0v1.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 01-6 0v-1m6 0H9" />
+            </svg>
+            <div>
+                <p><strong>비수기</strong>: 1~6월 / 9~12월</p>
+                <p><strong>성수기</strong>: 7~8월</p>
+            </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-green-600 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10m-12 4h14m-6 4h2m2 0a2 2 0 012 2v1H6v-1a2 2 0 012-2h2" />
+            </svg>
+            <div>
+                <p><strong>주중 요금</strong>: 일요일 ~ 목요일</p>
+                <p><strong>주말 요금</strong>: 금, 토, 공휴일 전날</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 요금표 -->
+    <section>
+        <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-300 text-center text-base text-gray-800">
+                <thead class="bg-gray-100">
+                <tr>
+                    <th class="border px-4 py-2">객실</th>
+                    <th class="border px-4 py-2">비수기<br>주중</th>
+                    <th class="border px-4 py-2">비수기<br>주말</th>
+                    <th class="border px-4 py-2">성수기<br>주중</th>
+                    <th class="border px-4 py-2">성수기<br>주말</th>
+                    <th class="border px-4 py-2">기준 인원</th>
+                </tr>
+                </thead>
+                <tbody class="text-sm md:text-base">
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">101호</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">200,000원</td>
+                    <td class="border px-4 py-2">250,000원</td>
+                    <td class="border px-4 py-2">250,000원</td>
+                    <td class="border px-4 py-2">8인 / 10인</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">102호</td>
+                    <td class="border px-4 py-2">80,000원</td>
+                    <td class="border px-4 py-2">100,000원</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">4인 / 6인</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">103호</td>
+                    <td class="border px-4 py-2">80,000원</td>
+                    <td class="border px-4 py-2">100,000원</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">4인 / 6인</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">301호</td>
+                    <td class="border px-4 py-2">130,000원</td>
+                    <td class="border px-4 py-2">150,000원</td>
+                    <td class="border px-4 py-2">200,000원</td>
+                    <td class="border px-4 py-2">200,000원</td>
+                    <td class="border px-4 py-2">6인 / 8인</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">302호</td>
+                    <td class="border px-4 py-2">40,000원</td>
+                    <td class="border px-4 py-2">60,000원</td>
+                    <td class="border px-4 py-2">80,000원</td>
+                    <td class="border px-4 py-2">80,000원</td>
+                    <td class="border px-4 py-2">2인 / 2인</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">303호</td>
+                    <td class="border px-4 py-2">50,000원</td>
+                    <td class="border px-4 py-2">70,000원</td>
+                    <td class="border px-4 py-2">100,000원</td>
+                    <td class="border px-4 py-2">100,000원</td>
+                    <td class="border px-4 py-2">2인 / 2인</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="../reserve/reservation.html" class="inline-block bg-violet-300 hover:bg-violet-700 text-white text-lg font-semibold px-8 py-3 rounded-xl shadow transition">
+                예약하기
+            </a>
+        </div>
+    </section>
+
+
+
+</main>
+<script>
+    fetch('../partials/header.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            import('../assets/js/header.js').then(module => {
+                module.initHeader();
+            });
+        });
+</script>
+</body>
+</html>

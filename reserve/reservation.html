@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>예약 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
+
+<!-- 메인 콘텐츠 -->
+<main class="pt-32 pb-64 px-6 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">예약 안내</h1>
+
+    <!-- 계좌 이체 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z M12 14v4m0 4h.01M21 12c0-4.418-3.582-8-8-8S5 7.582 5 12s3.582 8 8 8 8-3.582 8-8z" />
+            </svg>
+            <h2>계좌 이체 / 현금</h2>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 space-y-2 text-lg">
+            <p><strong>은행 :</strong> 농협</p>
+            <p><strong>계좌번호 :</strong> 417118-52-076307</p>
+            <p><strong>예금주 :</strong> 박수희</p>
+        </div>
+    </section>
+
+    <!-- 기본 안내 -->
+    <section class="mb-12">
+        <div class="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 14h.01M16 10h.01M21 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z" />
+            </svg>
+            <h2>기본 안내</h2>
+        </div>
+        <ul class="list-disc list-inside space-y-1 text-lg text-gray-700">
+            <li>전화로 예약 문의 / 전액 입금 완료 후 예약 완료 (예약자 & 입금자 성함을 알려주세요)</li>
+            <li>기준 인원 초과 시 1인당 10,000원 추가 요금</li>
+            <li>입실 14시 이후 / 퇴실 11시 이전</li>
+            <li>예약 손님 외에는 외부인 출입 금지 (외부인 초대 금지)</li>
+            <li>애완동물 동반은 원칙적으로 금지, 적발 시 퇴실 조치</li>
+            <li>입실/퇴실 시간 미준수 시 시간당 10,000원 추가요금 부과</li>
+        </ul>
+    </section>
+
+    <!-- 취소 규정 -->
+    <section>
+        <div class="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-1.414 1.414L12 11.999 7.05 7.05 5.636 8.464 10.586 13.414l-4.95 4.95 1.414 1.414L12 14.828l4.95 4.95 1.414-1.414-4.95-4.95 4.95-4.95z" />
+            </svg>
+            <h2>취소 규정</h2>
+        </div>
+        <ul class="list-disc list-inside space-y-1 text-lg text-gray-700">
+            <li>환불 적용은 이용요금 100% 입금 시 적용됩니다.</li>
+            <li>예약 후 취소 시 위약금 발생 (기본요금의 10%)</li>
+        </ul>
+
+        <!-- 환불율 표 -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-300 text-center text-base text-gray-800">
+                <thead class="bg-gray-100">
+                <tr>
+                    <th class="border px-4 py-2">사용일</th>
+                    <th class="border px-4 py-2">이용당일 ~ 이용 2일전</th>
+                    <th class="border px-4 py-2">이용 3일전</th>
+                    <th class="border px-4 py-2">이용 4일전</th>
+                    <th class="border px-4 py-2">이용 5일전</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border px-4 py-2 font-semibold">환불율</td>
+                    <td class="border px-4 py-2 text-red-500">환불 불가</td>
+                    <td class="border px-4 py-2">20%</td>
+                    <td class="border px-4 py-2">30%</td>
+                    <td class="border px-4 py-2">50%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<script>
+    fetch('../partials/header.html')
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            import('../assets/js/header.js').then(module => {
+                module.initHeader();
+            });
+        });
+</script>
+</body>
+</html>
