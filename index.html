@@ -14,37 +14,52 @@
         }
     </style>
 </head>
-<body class="relative h-[100dvh] w-screen overflow-hidden font-sans">
-
-<!--  동영상 배경 (세로 맞춤) -->
+<body class="relative min-h-screen font-sans overflow-x-hidden">
+<!-- 배경 비디오 -->
 <video
         autoplay
         muted
         loop
         playsinline
-        class="fixed top-0 left-0 w-full h-[100dvh] object-cover z-[-1]"
+        class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"
 >
     <source src="assets/video/sample-3.mp4" type="video/mp4" />
     브라우저가 비디오를 지원하지 않습니다.
 </video>
 
-<!-- 🍔 슬라이드 메뉴 -->
+
+<!-- 헤더 -->
 <div id="header-placeholder"></div>
 
+<!-- 콘텐츠가 없어도 푸터는 맨 아래 고정 -->
+<main class="pb-32"></main>
 
+<!-- 푸터 -->
+<div id="footer-container" class="fixed bottom-0 left-0 w-full z-50"></div>
 
 <script type="module">
-    fetch('partials/header.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
+    // 헤더와 푸터 HTML fetch
+    const headerPromise = fetch('partials/header.html').then(res => res.text());
+    const footerPromise = fetch('partials/footer.html').then(res => res.text());
 
-            import('./assets/js/header.js').then(module => {
-                module.initHeader();
-            });
+    // 두 HTML 삽입
+    Promise.all([headerPromise, footerPromise])
+        .then(([headerHtml, footerHtml]) => {
+            document.getElementById('header-placeholder').innerHTML = headerHtml;
+            document.getElementById('footer-container').innerHTML = footerHtml;
+        })
+        .then(() => {
+            // ✅ header.html 삽입이 끝난 후 JS 로드
+            return import('/assets/js/header.js');
+        })
+        .then((module) => {
+            module.initHeader(); // ✅ 반드시 export 된 함수여야 함
+        })
+        .catch(err => {
+            console.error('헤더/푸터 로드 중 오류 발생:', err);
         });
 </script>
-
-
 </body>
+
+
 </html>

@@ -6,180 +6,209 @@
     <title>301호 - 로즈마리펜션</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="flex flex-col min-h-screen font-sans">
 <!-- 🍔 슬라이드 메뉴 -->
 <div id="header-placeholder"></div>
 
-<!-- Hero Section -->
-<section class="relative h-[60vh] w-full">
-    <img src="../assets/images/room-301-main.jpg" alt="301호 대표 이미지" class="object-cover w-full h-full">
-    <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white">
-        <h1 class="text-4xl md:text-5xl font-bold mb-2">301호 패밀리룸</h1>
-        <p class="text-lg md:text-xl">여유로운 공간의 패밀리룸, 넉넉한 휴식을 위한 선택</p>
-        <a href="#reserve"
-           class="mt-6 bg-white text-gray-800 px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">예약하기</a>
-    </div>
-</section>
+<main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] w-full">
+        <img src="../assets/images/room-301-main.jpg" alt="301호 대표 이미지" class="object-cover w-full h-full">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2">301호 패밀리룸</h1>
+            <p class="text-lg md:text-xl">여유로운 공간의 패밀리룸, 넉넉한 휴식을 위한 선택</p>
+            <a href="#reserve"
+               class="mt-6 bg-white text-gray-800 px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">예약하기</a>
+        </div>
+    </section>
 
-<!-- 방 소개 -->
-<!-- 방 섹션 헤더 -->
-<section class="bg-[#f9f9f4] text-gray-800 px-4 py-12">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold mb-2">301호 단체룸</h2>
-        <p class="text-gray-600 mb-8">
-            복층 구조의 아늑한 공간에서 아이들과 함께 별빛을 바라보며 특별한 추억을 만들어보세요.
-        </p>
+    <!-- 방 소개 -->
+    <!-- 방 섹션 헤더 -->
+    <section class="bg-[#f9f9f4] text-gray-800 px-4 py-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-bold mb-2">301호 단체룸</h2>
+            <p class="text-gray-600 mb-8">
+                복층 구조의 아늑한 공간에서 아이들과 함께 별빛을 바라보며 특별한 추억을 만들어보세요.
+            </p>
 
-        <!-- 상단: 큰 이미지 + 설명 -->
-        <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
-            <!-- 이미지 -->
-            <img src="../assets/images/room301-1.jpeg" alt="301호 대표 이미지" class="rounded-xl shadow-md w-full">
+            <!-- 상단: 큰 이미지 + 설명 -->
+            <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
+                <!-- 이미지 -->
+                <img src="../assets/images/room301-1.jpeg" alt="301호 대표 이미지" class="rounded-xl shadow-md w-full">
 
-            <!-- 설명 -->
-            <div class="text-gray-800">
-                <h3 class="text-2xl font-bold mb-2 text-green-900">301호 단체룸</h3>
-                <p><strong>인원:</strong> 기준 6명 / 최대 8명</p>
-                <p><strong>크기:</strong> 9평 복층형</p>
-                <p><strong>구성:</strong> 온돌 1실, 주방, 샤워&화장실</p>
-                <p class="mt-2">
-                    <strong>특징:</strong> 복층 다락방이 있어 아이들이 좋아하며,<br>
-                    한밤에 창으로 쏟아지는 별빛 보기도 색다릅니다.
-                </p>
-                <p class="mt-2">
-                    두 가족이 이용하실 수 있지만,<br>
-                    <strong>인원수가 많을 경우 302호와 함께 이용하시면 편리합니다.</strong>
-                </p>
-                <!-- View Details 버튼 -->
-                <a href="#" id="openModal" class="inline-block mt-4 text-blue-600 underline">View Details</a>
+                <!-- 설명 -->
+                <div class="text-gray-800">
+                    <h3 class="text-2xl font-bold mb-2 text-green-900">301호 단체룸</h3>
+                    <p><strong>인원:</strong> 기준 6명 / 최대 8명</p>
+                    <p><strong>크기:</strong> 9평 복층형</p>
+                    <p><strong>구성:</strong> 온돌 1실, 주방, 샤워&화장실</p>
+                    <p class="mt-2">
+                        <strong>특징:</strong> 복층 다락방이 있어 아이들이 좋아하며,<br>
+                        한밤에 창으로 쏟아지는 별빛 보기도 색다릅니다.
+                    </p>
+                    <p class="mt-2">
+                        두 가족이 이용하실 수 있지만,<br>
+                        <strong>인원수가 많을 경우 302호와 함께 이용하시면 편리합니다.</strong>
+                    </p>
+                    <!-- View Details 버튼 -->
+                    <a href="#" id="openModal" class="inline-block mt-4 text-blue-600 underline">View Details</a>
 
-                <!-- 모달 -->
-                <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
-                    <div class="relative max-w-3xl w-full bg-white rounded-lg overflow-hidden shadow-lg">
+                    <!-- 모달 -->
+                    <div id="imageModal"
+                         class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+                        <div class="relative max-w-3xl w-full bg-white rounded-lg overflow-hidden shadow-lg">
 
-                        <!-- 닫기(X) 버튼 -->
-                        <button id="closeModal" class="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl font-bold z-10">&times;</button>
-
-                        <!-- 이미지 영역 -->
-                        <div class="relative">
-                            <img id="modalImage" src="../assets/images/room-301-sub1.jpg" alt="슬라이드 이미지" class="w-full max-h-[80vh] object-contain">
-
-                            <!-- ← 이전 버튼 -->
-                            <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
-                                &#8592;
+                            <!-- 닫기(X) 버튼 -->
+                            <button id="closeModal"
+                                    class="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl font-bold z-10">
+                                &times;
                             </button>
 
-                            <!-- → 다음 버튼 -->
-                            <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
-                                &#8594;
-                            </button>
+                            <!-- 이미지 영역 -->
+                            <div class="relative">
+                                <img id="modalImage" src="../assets/images/room-301-sub1.jpg" alt="슬라이드 이미지"
+                                     class="w-full max-h-[80vh] object-contain">
+
+                                <!-- ← 이전 버튼 -->
+                                <button id="prevBtn"
+                                        class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                                    &#8592;
+                                </button>
+
+                                <!-- → 다음 버튼 -->
+                                <button id="nextBtn"
+                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white bg-black/50 hover:bg-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                                    &#8594;
+                                </button>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
+            </div>
 
-
+            <!-- 하단 썸네일 이미지 -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <img src="../assets/images/room301-2.jpeg" alt="301호 서브1"
+                     class="rounded-lg hover:opacity-90 transition">
+                <img src="../assets/images/room301-3.jpeg" alt="301호 서브2"
+                     class="rounded-lg hover:opacity-90 transition">
+                <img src="../assets/images/room301-4.jpeg" alt="301호 서브3"
+                     class="rounded-lg hover:opacity-90 transition">
+                <img src="../assets/images/room301-5.jpeg" alt="301호 서브4"
+                     class="rounded-lg hover:opacity-90 transition">
             </div>
         </div>
+    </section>
 
-        <!-- 하단 썸네일 이미지 -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <img src="../assets/images/room301-2.jpeg" alt="301호 서브1" class="rounded-lg hover:opacity-90 transition">
-            <img src="../assets/images/room301-3.jpeg" alt="301호 서브2" class="rounded-lg hover:opacity-90 transition">
-            <img src="../assets/images/room301-4.jpeg" alt="301호 서브3" class="rounded-lg hover:opacity-90 transition">
-            <img src="../assets/images/room301-5.jpeg" alt="301호 서브4" class="rounded-lg hover:opacity-90 transition">
+
+    <!-- 편의시설 안내 섹션 -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">편의시설 안내</h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <!-- 냉장고 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/fridge.png" alt="냉장고" class="w-6 h-6"/>
+                <span class="text-gray-700">냉장고</span>
+            </div>
+
+            <!-- 씽크대 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/sink.png" alt="씽크대" class="w-6 h-6"/>
+                <span class="text-gray-700">씽크대</span>
+            </div>
+
+            <!-- 전자렌지 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/microwave.png" alt="전자렌지" class="w-6 h-6"/>
+                <span class="text-gray-700">전자렌지</span>
+            </div>
+
+            <!-- 전기밥솥 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/rice-cooker.png" alt="전기밥솥" class="w-6 h-6"/>
+                <span class="text-gray-700">전기밥솥</span>
+            </div>
+
+            <!-- 식기류 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/dish.png" alt="식기류" class="w-6 h-6"/>
+                <span class="text-gray-700">식기류</span>
+            </div>
+
+            <!-- TV -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/tv.png" alt="TV" class="w-6 h-6"/>
+                <span class="text-gray-700">TV</span>
+            </div>
+
+            <!-- 에어컨 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/aircon.png" alt="에어컨" class="w-6 h-6"/>
+                <span class="text-gray-700">에어컨</span>
+            </div>
+
+            <!-- 욕실용품 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/bath.png" alt="욕실용품" class="w-6 h-6"/>
+                <span class="text-gray-700">욕실용품</span>
+            </div>
+
+            <!-- 드라이기 -->
+            <div class="flex items-center space-x-3">
+                <img src="../assets/icons/hairdryer.png" alt="드라이기" class="w-6 h-6"/>
+                <span class="text-gray-700">드라이기</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- 다른 객실 안내 -->
+    <section class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            <!-- 102호 -->
+            <a href="room-102.html" class="flex flex-col items-center text-center space-y-2">
+                <p class="text-sm font-semibold">102호</p>
+                <img src="../assets/images/room102-1.jpeg" alt="102호"
+                     class="w-full rounded-lg hover:opacity-80 transition"/>
+            </a>
 
-<!-- 편의시설 안내 섹션 -->
-<section class="max-w-6xl mx-auto px-4 py-12">
-    <h2 class="text-2xl font-bold mb-6 text-gray-800">편의시설 안내</h2>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <!-- 냉장고 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/fridge.png" alt="냉장고" class="w-6 h-6" />
-            <span class="text-gray-700">냉장고</span>
+            <!-- 103호 -->
+            <a href="room-103.html" class="flex flex-col items-center text-center space-y-2">
+                <p class="text-sm font-semibold">103호</p>
+                <img src="../assets/images/room103-1.jpeg" alt="103호"
+                     class="w-full rounded-lg hover:opacity-80 transition"/>
+            </a>
         </div>
-
-        <!-- 씽크대 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/sink.png" alt="씽크대" class="w-6 h-6" />
-            <span class="text-gray-700">씽크대</span>
-        </div>
-
-        <!-- 전자렌지 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/microwave.png" alt="전자렌지" class="w-6 h-6" />
-            <span class="text-gray-700">전자렌지</span>
-        </div>
-
-        <!-- 전기밥솥 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/rice-cooker.png" alt="전기밥솥" class="w-6 h-6" />
-            <span class="text-gray-700">전기밥솥</span>
-        </div>
-
-        <!-- 식기류 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/dish.png" alt="식기류" class="w-6 h-6" />
-            <span class="text-gray-700">식기류</span>
-        </div>
-
-        <!-- TV -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/tv.png" alt="TV" class="w-6 h-6" />
-            <span class="text-gray-700">TV</span>
-        </div>
-
-        <!-- 에어컨 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/aircon.png" alt="에어컨" class="w-6 h-6" />
-            <span class="text-gray-700">에어컨</span>
-        </div>
-
-        <!-- 욕실용품 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/bath.png" alt="욕실용품" class="w-6 h-6" />
-            <span class="text-gray-700">욕실용품</span>
-        </div>
-
-        <!-- 드라이기 -->
-        <div class="flex items-center space-x-3">
-            <img src="../assets/icons/hairdryer.png" alt="드라이기" class="w-6 h-6" />
-            <span class="text-gray-700">드라이기</span>
-        </div>
-    </div>
-</section>
-
-<!-- 다른 객실 안내 -->
-<section class="max-w-6xl mx-auto px-4 py-8">
-    <div class="grid grid-cols-2 sm:grid-cols-2 gap-4">
-        <!-- 102호 -->
-        <a href="room-102.html" class="flex flex-col items-center text-center space-y-2">
-            <p class="text-sm font-semibold">102호</p>
-            <img src="../assets/images/room102-1.jpeg" alt="102호" class="w-full rounded-lg hover:opacity-80 transition" />
-        </a>
-
-        <!-- 103호 -->
-        <a href="room-103.html" class="flex flex-col items-center text-center space-y-2">
-            <p class="text-sm font-semibold">103호</p>
-            <img src="../assets/images/room103-1.jpeg" alt="103호" class="w-full rounded-lg hover:opacity-80 transition" />
-        </a>
-    </div>
-</section>
+    </section>
+</main>
+<div id="footer-container"></div>
 
 
-<script>
-    fetch('../partials/header.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
+<script type="module">
+    // 헤더와 푸터 HTML fetch
+    const headerPromise = fetch('../partials/header.html').then(res => res.text());
+    const footerPromise = fetch('../partials/footer.html').then(res => res.text());
 
-            import('../assets/js/header.js').then(module => {
-                module.initHeader();
-            });
+    // 두 HTML 삽입
+    Promise.all([headerPromise, footerPromise])
+        .then(([headerHtml, footerHtml]) => {
+            document.getElementById('header-placeholder').innerHTML = headerHtml;
+            document.getElementById('footer-container').innerHTML = footerHtml;
+        })
+        .then(() => {
+            // ✅ header.html 삽입이 끝난 후 JS 로드
+            return import('/assets/js/header.js');
+        })
+        .then((module) => {
+            module.initHeader(); // ✅ 반드시 export 된 함수여야 함
+        })
+        .catch(err => {
+            console.error('헤더/푸터 로드 중 오류 발생:', err);
         });
+</script>
+<script>
 
     const openModal = document.getElementById('openModal');
     const closeModal = document.getElementById('closeModal');

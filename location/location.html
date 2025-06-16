@@ -91,30 +91,29 @@
                 module.initHeader();
             });
         });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(36.9080854, 127.9833069),
+            zoom: 15
+        });
 
+        var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(36.9080854, 127.9833069),
+            map: map,
+            title: "로즈마리펜션"
+        });
 
+        var infowindow = new naver.maps.InfoWindow({
+            content: '<div style="padding:10px;">로즈마리펜션<br/>충북 충주시 수안보면 미륵송계로 464</div>'
+        });
 
-    // ✅ 지도 초기화
-    var map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(36.9080854, 127.9833069), // 수안보 미륵송계로 464 근처 좌표
-        zoom: 15
-    });
-
-    // ✅ 마커 생성
-    var marker = new naver.maps.Marker({
-        position: new naver.maps.LatLng(36.9080854, 127.9833069),
-        map: map,
-        title: "로즈마리펜션"
-    });
-
-    // ✅ 정보창
-    var infowindow = new naver.maps.InfoWindow({
-        content: '<div style="padding:10px;">로즈마리펜션<br/>충북 충주시 수안보면 미륵송계로 464</div>'
-    });
-
-    naver.maps.Event.addListener(marker, "click", function () {
-        infowindow.open(map, marker);
+        naver.maps.Event.addListener(marker, "click", function () {
+            infowindow.open(map, marker);
+        });
     });
 </script>
+
 </body>
 </html>
