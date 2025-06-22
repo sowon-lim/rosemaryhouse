@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>오시는 길</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dv0794kphz"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=dv0794kphz"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 <!-- 🍔 슬라이드 메뉴 -->
@@ -81,15 +81,28 @@
         <p class="text-lg text-gray-700">하차 후 도보 약 10분</p>
     </section>
 </main>
-<script>
-    fetch('../partials/header.html')
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
+<div id="footer-container"></div>
 
-            import('../assets/js/header.js').then(module => {
-                module.initHeader();
-            });
+<script type="module">
+    // 헤더와 푸터 HTML fetch
+    const headerPromise = fetch('../partials/header.html').then(res => res.text());
+    const footerPromise = fetch('../partials/footer.html').then(res => res.text());
+
+    // 두 HTML 삽입
+    Promise.all([headerPromise, footerPromise])
+        .then(([headerHtml, footerHtml]) => {
+            document.getElementById('header-placeholder').innerHTML = headerHtml;
+            document.getElementById('footer-container').innerHTML = footerHtml;
+        })
+        .then(() => {
+            // ✅ header.html 삽입이 끝난 후 JS 로드
+            return import('/assets/js/header.js');
+        })
+        .then((module) => {
+            module.initHeader(); // ✅ 반드시 export 된 함수여야 함
+        })
+        .catch(err => {
+            console.error('헤더/푸터 로드 중 오류 발생:', err);
         });
 </script>
 <script>
