@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>이용시설</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="flex flex-col min-h-screen font-sans">
+<!-- 🍔 슬라이드 메뉴 -->
+<div id="header-placeholder"></div>
+<main>
 
+</main>
+<div id="footer-container"></div>
+
+
+<script type="module">
+    // 헤더와 푸터 HTML fetch
+    const headerPromise = fetch('../partials/header.html').then(res => res.text());
+    const footerPromise = fetch('../partials/footer.html').then(res => res.text());
+
+    // 두 HTML 삽입
+    Promise.all([headerPromise, footerPromise])
+        .then(([headerHtml, footerHtml]) => {
+            document.getElementById('header-placeholder').innerHTML = headerHtml;
+            document.getElementById('footer-container').innerHTML = footerHtml;
+        })
+        .then(() => {
+            // ✅ header.html 삽입이 끝난 후 JS 로드
+            return import('/assets/js/header.js');
+        })
+        .then((module) => {
+            module.initHeader(); // ✅ 반드시 export 된 함수여야 함
+        })
+        .catch(err => {
+            console.error('헤더/푸터 로드 중 오류 발생:', err);
+        });
+</script>
 </body>
 </html>

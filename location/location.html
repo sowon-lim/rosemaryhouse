@@ -33,7 +33,7 @@
             </svg>
             <span>지번 주소</span>
         </div>
-        <p class="text-lg">충북 충주시 수안보면 온천리 481-5</p>
+        <p class="text-lg">충북 충주시 수안보면 사문리 58</p>
 
         <!-- 지도 컨테이너 -->
         <div id="map" class="w-full h-[400px] rounded-xl shadow mb-12"></div>
@@ -59,7 +59,7 @@
             <h2>자가용 이용 시</h2>
         </div>
         <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
-            <li>네비게이션에 <strong>‘미륵송계로 464’</strong> 또는 <strong>‘수안보 미륵리 481-5’</strong> 입력</li>
+            <li>네비게이션에 <strong>‘충주시 수안보면 미륵송계로 464’</strong> 또는 <strong>‘충주시 수안보면 사문리 58’</strong> 입력</li>
             <li>중부내륙고속도로 <strong>수안보 IC → 약 7분 거리</strong></li>
             <li><strong>충주 시내</strong>에서 약 30분, <strong>서울 기준 약 2시간 소요</strong></li>
         </ul>
@@ -108,12 +108,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(36.9080854, 127.9833069),
+            center: new naver.maps.LatLng(36.835352, 128.053557),
             zoom: 15
         });
 
         var marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(36.9080854, 127.9833069),
+            position: new naver.maps.LatLng(36.835352, 128.053557),
             map: map,
             title: "로즈마리펜션"
         });
