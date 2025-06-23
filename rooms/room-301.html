@@ -16,7 +16,9 @@
         <img src="../assets/images/rosemary_intro_4.jpeg" alt="301호 대표 이미지" class="object-cover w-full h-full">
         <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-2">301호 패밀리룸</h1>
-            <p class="text-lg md:text-xl">여유로운 공간의 패밀리룸, 넉넉한 휴식을 위한 선택</p>
+            <p class="text-lg md:text-xl">
+                복층 다락방이 있는 넉넉한 공간에서 가족, 친구들과 함께 별빛 가득한 하룻밤을 보내보세요.
+            </p>
             <a href="../reserve/reservation.html"
                class="mt-6 bg-white text-gray-800 px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">예약하기</a>
         </div>
@@ -34,24 +36,35 @@
             <!-- 상단: 큰 이미지 + 설명 -->
             <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
                 <!-- 이미지 -->
-                <img src="../assets/images/room301-1.jpeg" alt="301호 대표 이미지" class="rounded-xl shadow-md w-full">
+                <img src="../assets/images/room301-1.jpeg" alt="301호 대표 이미지" class="rounded-xl shadow-md w-full" />
 
                 <!-- 설명 -->
-                <div class="text-gray-800">
-                    <h3 class="text-2xl font-bold mb-2 text-green-900">301호 단체룸</h3>
-                    <p><strong>인원:</strong> 기준 6명 / 최대 8명</p>
-                    <p><strong>크기:</strong> 9평 복층형</p>
-                    <p><strong>구성:</strong> 온돌 1실, 주방, 샤워&화장실</p>
-                    <p class="mt-2">
-                        <strong>특징:</strong> 복층 다락방이 있어 아이들이 좋아하며,<br>
-                        한밤에 창으로 쏟아지는 별빛 보기도 색다릅니다.
-                    </p>
-                    <p class="mt-2">
-                        두 가족이 이용하실 수 있지만,<br>
-                        <strong>인원수가 많을 경우 302호와 함께 이용하시면 편리합니다.</strong>
-                    </p>
+                <div class="bg-white/90 p-6 rounded-xl shadow-md space-y-3">
+                    <h3 class="text-2xl font-extrabold text-green-900">301호 단체룸</h3>
+
+                    <ul class="space-y-1 text-base leading-relaxed">
+                        <li><span class="font-semibold text-gray-700">👥 인원:</span> 기준 6명 / 최대 8명</li>
+                        <li><span class="font-semibold text-gray-700">📐 크기:</span> 9평 복층형</li>
+                        <li><span class="font-semibold text-gray-700">🛏️ 구성:</span> 온돌 1실, 주방, 샤워&화장실</li>
+                    </ul>
+
+                    <div class="text-base text-gray-700 leading-relaxed pt-2">
+                        <p class="mb-2">
+                            🧸 <strong class="text-gray-800">특징:</strong> 복층 다락방이 있어 아이들이 좋아하며,<br />
+                            한밤에 창으로 쏟아지는 별빛 보기도 색다릅니다.
+                        </p>
+                        <p>
+                            <strong class="text-gray-800">TIP:</strong> 인원이 많을 경우 <span class="underline font-semibold">302호와 함께 이용</span>하시면 더 편리해요.
+                        </p>
+                    </div>
+
                     <!-- View Details 버튼 -->
-                    <a href="#" id="openModal" class="inline-block mt-4 text-blue-600 underline">View Details</a>
+                    <a href="#"
+                       id="openModal"
+                       class="inline-block mt-6 px-5 py-2 border border-indigo-500 text-indigo-600 font-medium rounded-full hover:bg-indigo-50 transition duration-200 shadow-sm hover:shadow-md"
+                    >
+                        📷 View Details
+                    </a>
 
                     <!-- 모달 -->
                     <div id="imageModal"
@@ -67,7 +80,7 @@
                             <!-- 이미지 영역 -->
                             <div class="relative">
                                 <img id="modalImage" src="../assets/images/room-301-sub1.jpg" alt="슬라이드 이미지"
-                                     class="w-full max-h-[80vh] object-contain">
+                                     class="w-full max-h-[80vh] object-contain" />
 
                                 <!-- ← 이전 버튼 -->
                                 <button id="prevBtn"
@@ -83,24 +96,21 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
-            <!-- 하단 썸네일 이미지 -->
-<!--            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">-->
-<!--                <img src="../assets/images/room301-2.jpeg" alt="301호 서브1"-->
-<!--                     class="rounded-lg hover:opacity-90 transition">-->
-<!--                <img src="../assets/images/room301-3.jpeg" alt="301호 서브2"-->
-<!--                     class="rounded-lg hover:opacity-90 transition">-->
-<!--                <img src="../assets/images/room301-4.jpeg" alt="301호 서브3"-->
-<!--                     class="rounded-lg hover:opacity-90 transition">-->
-<!--                <img src="../assets/images/room301-5.jpeg" alt="301호 서브4"-->
-<!--                     class="rounded-lg hover:opacity-90 transition">-->
-<!--            </div>-->
+            <!-- 하단 썸네일 이미지 (필요시 주석 해제) -->
+            <!--
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <img src="../assets/images/room301-2.jpeg" alt="301호 서브1" class="rounded-lg hover:opacity-90 transition" />
+              <img src="../assets/images/room301-3.jpeg" alt="301호 서브2" class="rounded-lg hover:opacity-90 transition" />
+              <img src="../assets/images/room301-4.jpeg" alt="301호 서브3" class="rounded-lg hover:opacity-90 transition" />
+              <img src="../assets/images/room301-5.jpeg" alt="301호 서브4" class="rounded-lg hover:opacity-90 transition" />
+            </div>
+            -->
         </div>
     </section>
+
 
 
     <!-- 편의시설 안내 섹션 -->
