@@ -13,31 +13,31 @@
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen font-sans overflow-x-hidden">
-<!--<body class="relative min-h-screen font-sans overflow-x-hidden"> -->
-<!-- 배경 비디오 -->
-<!--<video-->
-<!--        autoplay-->
-<!--        muted-->
-<!--        loop-->
-<!--        playsinline-->
-<!--        class="fixed top-0 left-0 w-full h-full object-cover z-[-1]"-->
-<!--&gt;-->
-<!--    <source src="assets/video/sample-3.mp4" type="video/mp4" />-->
-<!--    브라우저가 비디오를 지원하지 않습니다.-->
-<!--</video>-->
+<body class="relative font-sans overflow-x-hidden">
+
+<!-- 배경 비디오 섹션 -->
+<section class="relative h-screen w-full overflow-hidden">
+    <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+        <source src="assets/video/rosemary_index.mp4" type="video/mp4" />
+        브라우저가 비디오를 지원하지 않습니다.
+    </video>
+
+    <!-- 영상 위에 얹을 콘텐츠가 있다면 여기에 작성 -->
+    <div class="relative z-10 flex items-center justify-center h-full text-white">
+    </div>
+</section>
 
 <!-- 헤더 -->
 <div id="header-placeholder"></div>
 
-<main class="flex-grow relative">
-    <img src="assets/images/main-background.jpeg" alt="메인 배경"
-         class="w-full h-full object-contain mx-auto" />
-</main>
-
-
 <!-- 푸터 -->
-<div id="footer-container" data-page="index"></div>
+<div id="footer-container" class="w-full z-50"></div>
 
 <!-- 스크립트 -->
 <script type="module">
@@ -53,14 +53,13 @@
             return import('/assets/js/header.js');
         })
         .then((module) => {
-            module.initHeader(); // ✅ 반드시 export 된 함수여야 함
+            module.initHeader();
         })
         .catch(err => {
             console.error('헤더/푸터 로드 중 오류 발생:', err);
         });
 </script>
 
-
-
 </body>
+
 </html>
